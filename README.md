@@ -11,6 +11,7 @@ It's time to say BYE BYE to the old-school terminal based output for your lint e
 
 > *Currently supports only **Angular** based projects*
 
+
 ## Highlights
 
 - Issues are grouped as Errors/Warnings 
@@ -18,18 +19,33 @@ It's time to say BYE BYE to the old-school terminal based output for your lint e
 - Easy to copy the results in **JSON** format
 - Search for the issue in google by clicking on the issue title
 
+
 ## Installation
 
 Use the package manager **npm** to install lint-visualizer.
 
 ```bash
-npm install lint-visualizer
+npm install -D lint-visualizer
 ```
+
 
 ## Usage
 
+Add the following line to the `package.json` under the scripts section
+
 ```
-$ lint-visualizer -p <Project Name> [options]
+  "scripts": {
+    
+    ...
+
+    "lint-visualizer": "lint-visualizer -p <Project Name> [options]"
+  }
+```
+
+Now run the following command to see the **Lint Visualizer** in action
+
+```
+$ npm run lint-visualizer
 ```
 
 The results will be available at [http://localhost:8080](http://localhost:8080) once the command is executed successfully 
@@ -41,6 +57,7 @@ The results will be available at [http://localhost:8080](http://localhost:8080) 
 | :---: | :---: | :---: |
 | `-configuration` | `-c` | Specify the configuration to use |
 | `-tslint-config` | `-tc` | The name of the TSLint configuration file |
+
 
 ## Roadmap 🚀
 
