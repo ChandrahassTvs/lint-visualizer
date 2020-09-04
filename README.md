@@ -42,14 +42,14 @@ The results will be avilable at [http://localhost:8080](http://localhost:8080) o
 | `-configuration` | `-c` | Specify the configuration to use |
 | `-tslint-config` | `-tc` | The name of the TSLint configuration file |
 
-## Roadmap
+## Roadmap 🚀
 
 Looking to improve this tool by adding more features going forward as mentioned below:
 
-- Support for the other frameworks and libraries 🎉
-- Ability to Filter/Sort the results 🥳
-- Results history with timestamp 🎊
-- Easy to use light-weight hosted application 🚀
+- Support for the other frameworks and libraries
+- Ability to Filter/Sort the results
+- Results history with timestamp
+- Easy to use light-weight hosted application
 
 
 ## License
