@@ -13,9 +13,6 @@
     "http-server": "^0.12.3",
     "yargs": "^13.2.4"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ChandrahassTvs/lint-visualizer.git"
