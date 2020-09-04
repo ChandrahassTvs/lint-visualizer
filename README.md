@@ -5,9 +5,9 @@
 
 > Lint Visualizer provides a smart way to view your project's lint errors & warning as actionable items
 
-<img src="https://live.staticflickr.com/65535/50305182567_f6a8c2d127_h.jpg">
+<img src="https://live.staticflickr.com/65535/50305182567_282594780e_h.jpg">
 
-It's time to say BYE BYE! to the old-school terminal based output for your lint errors/warnings. With the all new **Lint Visualizer**, you will now have a clear way to visualize your lint errors/warnings and keep track of them as they are being fixed. Its come with a couple of handy features that helps the developers in clearly working on the errors/warning and also to search for the fix.
+It's time to say BYE BYE! to the old-school terminal based output for your lint errors/warnings. With the all new **Lint Visualizer**, you will now have a clear way to visualize your lint errors/warnings and keep track of them as they are being fixed. It comes with a couple of handy features that help the developers to clearly work on the errors/warning and easily launch google search for the fix.
 
 > *Currently supports only **Angular** based projects*
 
@@ -32,7 +32,7 @@ npm install lint-visualizer
 $ lint-visualizer -p <Project Name> [options]
 ```
 
-The results will be avilable at [http://localhost:8080](http://localhost:8080) once the command is executed successfully 
+The results will be available at [http://localhost:8080](http://localhost:8080) once the command is executed successfully 
 
 
 ## Options
