@@ -36,7 +36,7 @@ executeLintCommand();
 function executeLintCommand() {
   console.log(green.bold("Please wait while we scan your project for lint issue"));
   exec(
-    `ng lint ${options.project || ""} --format="json"`,
+    `ng lint ${options.project || ""} --format=json`,
     (error, stdout, stderr) => {
       if (!stdout && error) {
         console.log(red(error));
