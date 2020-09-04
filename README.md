@@ -7,7 +7,7 @@
 
 <img src="https://live.staticflickr.com/65535/50305182567_282594780e_h.jpg">
 
-It's time to say BYE BYE! to the old-school terminal based output for your lint errors/warnings. With the all new **Lint Visualizer**, you will now have a clear way to visualize your lint errors/warnings and keep track of them as they are being fixed. It comes with a couple of handy features that help the developers to clearly work on the errors/warnings and easily launch google search for the fix.
+It's time to say BYE BYE to the old-school terminal based output for your lint errors/warnings. With the all new **Lint Visualizer**, you will now have a clear way to visualize your lint errors/warnings and keep track of them as they are being fixed. It comes with a couple of handy features that help the developers to clearly work on the errors/warnings and easily launch google search for the fix.
 
 > *Currently supports only **Angular** based projects*
 
