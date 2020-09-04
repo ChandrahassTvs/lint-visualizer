@@ -3,18 +3,18 @@
 	Lint Visualizer
 </h1>
 
-> Lint Visualizer provides a smart way to view your project's lint errors & warning as actionable items
+> Lint Visualizer provides a smart way to view your project's lint errors & warnings as actionable items
 
 <img src="https://live.staticflickr.com/65535/50305182567_282594780e_h.jpg">
 
-It's time to say BYE BYE! to the old-school terminal based output for your lint errors/warnings. With the all new **Lint Visualizer**, you will now have a clear way to visualize your lint errors/warnings and keep track of them as they are being fixed. It comes with a couple of handy features that help the developers to clearly work on the errors/warning and easily launch google search for the fix.
+It's time to say BYE BYE! to the old-school terminal based output for your lint errors/warnings. With the all new **Lint Visualizer**, you will now have a clear way to visualize your lint errors/warnings and keep track of them as they are being fixed. It comes with a couple of handy features that help the developers to clearly work on the errors/warnings and easily launch google search for the fix.
 
 > *Currently supports only **Angular** based projects*
 
 ## Highlights
 
 - Issues are grouped as Errors/Warnings 
-- Resolved issues can be viewed under a sperate section
+- Resolved issues can be viewed under a separate section
 - Easy to copy the results in **JSON** format
 - Search for the issue in google by clicking on the issue title
 

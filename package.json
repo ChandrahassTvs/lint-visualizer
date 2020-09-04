@@ -1,7 +1,7 @@
 {
   "name": "lint-visualizer",
   "version": "1.0.0",
-  "description": "Lint Visualizer provides a smart way to view your project's lint errors & warning as actionable items",
+  "description": "Lint Visualizer provides a smart way to view your project's lint errors & warnings as actionable items",
   "main": "bin/index.js",
   "author": "Chandrahass Tvs",
   "license": "MIT",
