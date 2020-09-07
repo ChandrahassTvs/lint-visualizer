@@ -2,8 +2,10 @@
 
 const chalk = require("chalk");
 const exec = require("child_process").exec;
+const spawn = require("child_process").spawn;
 const yargs = require("yargs");
 const fileSystem = require('fs');
+var parser = require('xml2json');
 
 const options = yargs
   .usage("Usage: lint-visualizer -p <project> [options]")
@@ -28,47 +30,77 @@ const red = chalk.keyword("red");
 const yellow = chalk.keyword("yellow");
 const orange = chalk.keyword("orange");
 const green = chalk.green;
+const blue = chalk.blue;
 var warnings = [];
 var errors = [];
 
 executeLintCommand();
 
+
 function executeLintCommand() {
-  console.log(green.bold("Please wait while we scan your project for lint issue"));
-  exec(
-    `ng lint ${options.project || ""} --format=json`,
-    (error, stdout, stderr) => {
-      if (!stdout && error) {
-        console.log(red(error));
-        return;
-      }
-      if (stderr) {
-        console.log(yellow(stderr));
-      }
-      processLintOutput(stdout);
+  console.log(blue.bold("Please wait while we scan your project for lint issues"));
+  const command = spawn('ng', getArgs());
+  var output = "";
+  command.stdout.on('data', (data) => {
+    output += data;
+  });
+
+  command.stderr.on('data', (data) => {
+    console.log(yellow(data));
+  });
+
+  command.on('error', (error) => {
+    console.log(red(error));
+  });
+
+  command.on('close', (code) => {
+    if (!code) {
+      console.log(green.bold("\nScan completed successfully!\n"));
+      processLintOutput(xmlToJson(JSON.parse(parser.toJson(output))));
     }
-  );
+  });
+}
+
+function getArgs() {
+  const cmdArgs = ['lint', options.p || "", '--format', 'checkstyle'];
+  if (options.c) {
+    cmdArgs.push(['--configuration', options.c])
+  }
+  if (options.tc) {
+    cmdArgs.push(['--tslint-config', options.tc])
+  }
+  return cmdArgs;
+}
+
+function xmlToJson(output) {
+  var array = [];
+  output.checkstyle.file.forEach(item => {
+    item.error = item.error.map(el => {
+      el.name = item.name;
+      el.source = (el.source || '').split('.')[2];
+      return el;
+    })
+    array = array.concat(item.error);
+  });
+  return array;
 }
 
 function processLintOutput(output) {
-  output = JSON.parse(output);
   output = output.filter((item, index) => output.findIndex(element =>
-    element.endPosition.character === item.endPosition.character
-    && element.endPosition.line === item.endPosition.line
-    && element.endPosition.position === item.endPosition.position
-    && element.startPosition.character === item.startPosition.character
-    && element.startPosition.line === item.startPosition.line
-    && element.startPosition.position === item.startPosition.position
-    && element.failure === item.failure
+    element.column === item.column
+    && element.line === item.line
+    && element.column === item.column
+    && element.line === item.line
+    && element.message === item.message
     && element.name === item.name
-    && element.ruleName === item.ruleName
-    && element.ruleSeverity === item.ruleSeverity
+    && element.source === item.source
+    && element.severity === item.severity
     ) === index && (item.id = index + 1));
   
   
   if (output.length) {
-    warnings = output.filter(item=> item.ruleSeverity.toLowerCase() === "warning");
-    errors = output.filter(item => item.ruleSeverity.toLowerCase() === "error");
+    warnings = output.filter(item=> item.severity.toLowerCase() === "warning");
+    errors = output.filter(item => item.severity.toLowerCase() === "error");
   
     if (errors.length) {
       console.log(red("Error(s): " + errors.length));

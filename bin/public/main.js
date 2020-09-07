@@ -165,8 +165,8 @@ function getFormattedResults(results) {
         </div>
         <div>
           <span class="inline-block text-md leading-relaxed text-gray-800 mb-2">
-            <a href="http://google.com/search?q=${encodeURIComponent(item.failure)}" target="_blank" rel=”noopener” class="cursor-pointer hover:text-gray-900 transition-colors ease-in-out duration-200 flex items-center">
-            ${item.failure}
+            <a href="http://google.com/search?q=${encodeURIComponent(item.message)}" target="_blank" rel=”noopener” class="cursor-pointer hover:text-gray-900 transition-colors ease-in-out duration-200 flex items-center">
+            ${item.message}
               <span class="inline-block">
                 <svg class="text-blue-600 w-4 h-4 ml-2 m-auto cursor-pointer hover:text-blue-700 transition-colors ease-in-out duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -175,9 +175,9 @@ function getFormattedResults(results) {
             </span>
             </a>
           </span>
-          <div class="text-xs leading-relaxed text-gray-600 mb-1 font-medium">${item.name} [${item.startPosition.line}, ${item.startPosition.character}]</div>
-          ${item.ruleName ? `<div>
-            <a class="inline-block w-auto text-xs font-medium border border-gray-300 bg-white rounded-md leading-loose px-2 text-gray-700 mr-2 mt-3 capitalize">${item.ruleName}</a>
+          <div class="text-xs leading-relaxed text-gray-600 mb-1 font-medium">${item.name} [${item.line}, ${item.column}]</div>
+          ${item.source ? `<div>
+            <a class="inline-block w-auto text-xs font-medium border border-gray-300 bg-white rounded-md leading-loose px-2 text-gray-700 mr-2 mt-3 capitalize">${item.source}</a>
           </div>` : ''}
         </div>
       </div>`;

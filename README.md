@@ -1,11 +1,11 @@
 <h1>
-  <img align="left" width="40" height="40" src="https://live.staticflickr.com/65535/50304969336_35086b7f64_s.jpg">
+  <img align="left" width="40" height="40" src="https://live.staticflickr.com/65535/50304969336_98d5f6ea32_w.jpg">
 	Lint Visualizer
 </h1>
 
 > Lint Visualizer provides a smart way to view your project's lint errors & warnings as actionable items
 
-<img src="https://live.staticflickr.com/65535/50305182567_282594780e_h.jpg">
+<img src="https://live.staticflickr.com/65535/50305182567_4a2038cf29_h.jpg">
 
 It's time to say BYE BYE to the old-school terminal based output for your lint errors/warnings. With the all new **Lint Visualizer**, you will now have a clear way to visualize your lint errors/warnings and keep track of them as they are being fixed. It comes with a couple of handy features that help you to clearly work on the errors/warnings and easily launch google search for the fix.
 
