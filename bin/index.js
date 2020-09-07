@@ -64,10 +64,10 @@ function executeLintCommand() {
 function getArgs() {
   const cmdArgs = ['lint', options.p || "", '--format', 'checkstyle'];
   if (options.c) {
-    cmdArgs.push(['--configuration', options.c])
+    cmdArgs = cmdArgs.concat(['--configuration', options.c]);
   }
   if (options.tc) {
-    cmdArgs.push(['--tslint-config', options.tc])
+    cmdArgs = cmdArgs.concat(['--tslint-config', options.tc]);
   }
   return cmdArgs;
 }
